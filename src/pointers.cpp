@@ -1933,6 +1933,34 @@ namespace big
                 g_pointers->m_gta.m_add_skeleton_extension = ptr.as<PVOID>();
                 g_pointers->m_gta.m_skeleton_extension_count = ptr.add(0x2C).rip().as<int*>();
             }
+        },
+        // Anticheat Initialized Hash
+        {
+            "AIH",
+            "48 83 EC 20 48 8B D9 48 8B 0D ? ? ? ? 48 85 C9 0F 84",
+            [](memory::handle ptr)
+            {
+               g_pointers->m_gta.m_anticheat_initialized_hash = ptr.add(10).rip().as<rage::Obf32**>();
+               g_pointers->m_gta.m_get_anticheat_initialized_hash = ptr.add(24).rip().add(1).rip().as<PVOID>();
+            }
+        },
+        // Anticheat Initialized Hash 2
+        {
+            "AIH2",
+            "89 8B E8 00 00 00 48 8B 0D",
+            [](memory::handle ptr)
+            {
+               g_pointers->m_gta.m_get_anticheat_initialized_hash_2 = ptr.add(14).rip().as<PVOID>();
+            }
+        },
+        // Anticheat Context
+        {
+            "AC",
+            "8B D0 41 54",
+            [](memory::handle ptr)
+            {
+               g_pointers->m_gta.m_anticheat_context = ptr.sub(10).rip().as<CAnticheatContext**>();
+            }
         }
         >(); // don't leave a trailing comma at the end
 

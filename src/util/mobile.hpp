@@ -46,12 +46,12 @@ namespace big::mobile
 
 		inline void request_backup_helicopter()
 		{
-			*scr_globals::freemode_global.at(4523).as<int*>() = 1;
+			*scr_globals::freemode_global.at(4524).as<int*>() = 1;
 		}
 
 		inline void request_airstrike()
 		{
-			*scr_globals::freemode_global.at(4524).as<int*>() = 1;
+			*scr_globals::freemode_global.at(4525).as<int*>() = 1;
 		}
 	}
 
@@ -90,7 +90,7 @@ namespace big::mobile
 	{
 		inline void request_bullshark_testosterone()
 		{
-			*scr_globals::freemode_properties.at(926).as<int*>() = 1;
+			*scr_globals::freemode_global.at(926).as<int*>() = 1;
 		}
 
 		inline void request_ballistic_armor() //i think this is a ceo ability atleast?
@@ -226,5 +226,3 @@ namespace big::mobile
 		}
 	}
 }
-
-

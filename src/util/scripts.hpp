@@ -119,7 +119,7 @@ namespace big::scripts
 			{
 				if (((CGameScriptHandlerNetComponent*)launcher->m_net_component)->is_player_a_participant(plyr->get_net_game_player()))
 				{
-					if (*script_local(launcher->m_stack, 240).at(plyr->id(), 3).at(2).as<int*>() == state)
+					if (*script_local(launcher->m_stack, 243).at(plyr->id(), 3).at(2).as<int*>() == state)
 					{
 						set = true;
 						break;
